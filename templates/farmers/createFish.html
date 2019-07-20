@@ -7,10 +7,17 @@ Add Fish
     <form action="{% url 'createFish' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
+            <label for="exampleInputEmail1">Farmer Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Farmer Name">
+        </div>
+        <div class="form-group">
             <label for="exampleInputEmail1">Fish Type</label>
             <input type="text" class="form-control" id="exampleInputEmail1" name="fish_type" placeholder="Seed Name">
         </div>
-
+        <div class="form-group">
+            <label for="exampleInputPassword1">Quantity</label>
+            <input type="number" class="form-control" id="exampleInputPassword1" name="quantity" placeholder="Quantity">
+        </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Price</label>
             <input type="number" class="form-control" id="exampleInputPassword1" name="price" placeholder="Price">
@@ -18,4 +25,4 @@ Add Fish
         <button type="submit" class="btn btn-primary">Add</button>
     </form>
     <div>
-        {% endblock%}
+        {% endblock %}

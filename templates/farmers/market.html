@@ -16,7 +16,10 @@ Vendor Products
                             <h5 class="card-title">{{product.seed_name}}</h5>
                             <h4>Expected Weather : {{product.exweather}}</h4>
                             <h4>Expected Ph: {{product.exph}}</h4>
-                            <a href=""><button class="btn btn-primary">Buy</button></a>
+                            <a href="{% url 'help' %}"><button class="btn btn-info">Get help</button></a>
+                            <form action="">
+                                <a href=""><button class="btn btn-primary">Buy</button></a>
+                            </form>
 
                         </div>
                     </div>
