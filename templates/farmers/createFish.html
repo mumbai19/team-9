@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{%block title%}
+Add Fish
+{% endblock %}
+{%block content %}
+<div>
+    <form action="{% url 'createFish' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Fish Type</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="fish_type" placeholder="Seed Name">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Price</label>
+            <input type="number" class="form-control" id="exampleInputPassword1" name="price" placeholder="Price">
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    <div>
+        {% endblock%}

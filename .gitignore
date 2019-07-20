@@ -1,3 +1,4 @@
 cfg
-Jalijeevika/db.sqlite3
+db.sqlite3
 .vscode
+Jaljeevika/__pycache__/

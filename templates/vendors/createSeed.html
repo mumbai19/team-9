@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{%block title%}
+Create Seeds
+{% endblock %}
+{%block content %}
+<div>
+    <form action="{% url 'createSeed' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Seed Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="seed" placeholder="Seed Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Expected Weather</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="exweather"
+                placeholder="Expected weather">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Expected ph</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="exph" placeholder="Expected ph">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Price</label>
+            <input type="number" class="form-control" id="exampleInputPassword1" name="price" placeholder="Price">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div>
+        {% endblock%}
