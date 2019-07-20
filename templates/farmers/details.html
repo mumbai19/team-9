@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block title%}
+{{details.seed_name}} Details
+{% endblock%}
+{%block content %}
+<div>
+    <a href="{% url 'createSeed' %}"><button class="btn btn-primary">Add new Seed</button></a>
+
+    <section id="listings" class="py-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{details.seed_name}}</h5>
+                <h4>Expected Weather : {{details.exweather}}</h4>
+                <h4>Expected Ph: {{details.exph}}</h4>
+            </div>
+        </div>
+
+    </section>
+    <div>
+        {% endblock%}

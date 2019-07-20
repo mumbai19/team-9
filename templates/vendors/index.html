@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block title%}
+Vendor Products
+{% endblock%}
+{%block content %}
+<div>
+    <a href="{% url 'createSeed' %}"><button class="btn btn-primary">Add new Seed</button></a>
+
+    <section id="listings" class="py-4">
+        <div class="container">
+            <div class="row">
+                {% if products %}
+                {% for product in products %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.seed_name}}</h5>
+                            <h4>Expected Weather : {{product.exweather}}</h4>
+                            <h4>Expected Ph: {{product.exph}}</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="col-md-12">
+                    <p>No products Created</p>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </section>
+    <div>
+        {% endblock%}
