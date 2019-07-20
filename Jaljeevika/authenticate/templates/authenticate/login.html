@@ -5,7 +5,7 @@
 	<title>Login V19</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="{%static 'login/images/icons/favicon.ico'%}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{%static 'login/vendor/bootstrap/css/bootstrap.min.css'%}">
@@ -15,13 +15,13 @@
 	<link rel="stylesheet" type="text/css" href="{%static 'login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css'%}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{%static 'login/vendor/animate/animate.css'%}">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{%static 'login/vendor/css-hamburgers/hamburgers.min.css'%}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{%static 'login/vendor/animsition/css/animsition.min.css'%}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{%static 'login/vendor/select2/select2.min.css'%}">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{%static 'login/vendor/daterangepicker/daterangepicker.css'%}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{%static 'login/css/util.css'%}">
@@ -29,11 +29,13 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post">
+					  <!-- {% csrf_token %}
+					  {{ form.as_p }} -->
 					<span class="login100-form-title p-b-33">
 						Account Login
 					</span>
@@ -69,9 +71,9 @@
 			</div>
 		</div>
 	</div>
-	
 
-	
+
+
 <!--===============================================================================================-->
 	<script src="{%static 'login/vendor/jquery/jquery-3.2.1.min.js'%}"></script>
 <!--===============================================================================================-->
