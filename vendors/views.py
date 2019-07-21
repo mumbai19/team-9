@@ -5,7 +5,7 @@ def index(request):
     products = SeedsProduct.objects.filter(vendor_name='saket')
     # return HttpResponse(products)
     # print(products)
-    return render(request,"vendors/index.html",{"products":products})
+    return render(request,"../index/templates/category-full.html",{"products":products})
 
 def createSeed(request):
     if(request.method=='POST'):
