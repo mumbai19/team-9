@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+<script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+		
+<script>
+       window.onload = function() {
+    gapi.client.setApiKey("AIzaSyCdjXKXcTtl7T4yIHQ9idSj8X-yCPEYxhg");
+    gapi.client.load("youtube", "v3", function() {
+        abc();
+        abc1();
+    });
+function abc() {
+        console.log("reached here");
+        var request = gapi.client.youtube.search.list({
+            part: "snippet",
+            type: "video",
+            q: "dogs",   
+            order: "viewCount",
+            channelId: "UCxwNrcBd_mlKTfFFJAWc_XA ",
+            max_results: 5,
+
+       });
+       request.execute(function(response) {
+          var results = response.result;
+          console.log(results)
+          var out = '<ul>';  
+          $.each (results.items , function(index,item){
+                out += "<li>" + 
+                        "<iframe width='420' height='315' src='https://www.youtube.com/embed/"+ item.id.videoId+"'></iframe>" 
+                 + "</li>";
+          
+          out += '<ul>';
+          $('#listView').html(out); 
+          });          
+       }); 
+};
+function abc1() {
+        console.log("reached here");
+        var request = gapi.client.youtube.search.list({
+            part: "snippet",
+            type: "video",
+            q: "cats",   
+            order: "viewCount",
+            channelId: "UCxwNrcBd_mlKTfFFJAWc_XA ",
+            maxResults: 5,
+
+       });
+       request.execute(function(response) {
+          var results = response.result;
+          console.log(results)
+          var out = '<ul>';  
+          $.each (results.items , function(index,item){
+                out += "<li>" + 
+                        "<iframe width='420' height='315' src='https://www.youtube.com/embed/"+ item.id.videoId+"'></iframe>" 
+                 + "</li>";
+          
+          out += '<ul>';
+          $('#listView1').html(out); 
+          });          
+       }); 
+};
+}    
+</script>
+
+<div><h5>Introduction</h5></div>
+<div id="listView"></div>
+<div><h5>Part 1</h5></div>
+<div id="listView1"></div>
+</body>
+</html> 

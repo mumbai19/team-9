@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from vendors.models import SeedsProduct
 
 def index(request):
@@ -13,5 +12,8 @@ def category(request):
     return render(request, 'category-full.html',context)
 
 def equipments(request):
-    return render(request, 'index/equipments.html')
+    return render(request, 'equipments.html')
+
+def tutorial(request):
+    return render(request, 'tutorials.html')
 
