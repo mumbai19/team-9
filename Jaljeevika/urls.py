@@ -7,6 +7,5 @@ urlpatterns = [
     path('vendors/', include("vendors.urls")),
     path('index/', include("index.urls")),
     path('index/seeds', index, name="index"),
-
     path('admin/', admin.site.urls)
 ]
